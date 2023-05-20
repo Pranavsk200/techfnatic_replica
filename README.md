@@ -20,6 +20,6 @@ this web application is the replica of https://www.techfnatic.com/ which enables
 ![Annotation 2023-05-20 194858](https://github.com/Pranavsk200/techfnatic_replica/assets/96428724/b4ca87ed-a4a8-4754-a498-50bb7c92bd8f)
 
 # NOTE 
-admin username = pranav
+admin username = pranav ;
 password = pranav
 
