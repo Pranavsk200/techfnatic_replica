@@ -1,0 +1,128 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechFnatic - Home Page</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'img/logo.png' %}">
+
+    <!-- Bootstrap-5.2 CSS -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap-5.2.css' %}">
+
+    <!-- Slick Slider CSS -->
+    <link rel="stylesheet" href="{% static 'css/slick.css' %}">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+
+<body>
+    <!-- ==== Background Video =====  -->
+    <!-- <div class="bg-video">
+        <video autoplay muted loop id="myVideo">
+            <source src="./img/bg.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+        </video>
+    </div> -->
+
+    <main id="main">
+        <!-- === Header (Navbar) -->
+        <header class="fixed-top">
+            <nav class="navbar navbar-expand-md p-0">
+                <div class="container">
+                    <a class="navbar-brand" href="index.html"><img src="{% static 'img/logo.png' %}" class="logo"
+                            alt="Logo Image"></a>
+                    <button class="navbar-toggler fs-24" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="offcanvas offcanvas-end mobile-nav" tabindex="-1" id="offcanvasNavbar"
+                        aria-labelledby="offcanvasNavbarLabel">
+                        <div class="offcanvas-header">
+                            <img src="{% static 'img/logo.png' %}" class="logo" alt="Logo Image">
+                            <button type="button" class="btn-close fs-24" data-bs-dismiss="offcanvas"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="offcanvas-body align-items-center">
+                            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="{% url 'index' %}">View Site</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                                </li>
+                                <li class="nav-item d-block d-md-none">
+                                    <a href="https://wa.me/+916361662946" target="_blank" class="nav-link"><img
+                                            src="{% static 'img/whatsapp.svg' %}" class="w-24px" alt="Whatsapp Icon"></a>
+                                </li>
+                            </ul>
+                            
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <section class="product-section pt-6rem" id="our-products">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="heading-2 position-relative d-inline-block pseudo-border-left pseudo-border-right">Home</h2>
+                </div>
+                <div class="row pt-2rem justify-content-between align-items-center">
+                    <div class="col-12 pb-5">
+                        <div class="product-slider">
+                            <!-- First Product -->
+                            <div class="card product-card">
+                                <div class="card-head position-relative">
+                                    <img src="../media/images/easy-ecom-33.png" class="card-img-top position-relative p-3"
+                                        alt="Product Image">
+                                </div>
+                                <hr>
+                                <div class="card-body mt-2">
+                                    <h3 class="card-title text-white"><span class="highlighter">Add Product</span> - <br>
+                                       Title, Discription, Phone_number</h3>
+                                    <a href="{% url 'adminProductDis' %}" class="btn d-flex align-items-center">Add <img
+                                            src="{% static 'img/arrow-right.svg' %}" class="ms-1 w-16px" alt="Arrow Icon"> </a>
+                                </div>
+                            </div>
+                            <!--  -->
+                        </div>
+                    </div>
+                    <div class="col-12 pb-5">
+                        <div class="product-slider">
+                            <!-- First Product -->
+                            <div class="card product-card">
+                                <div class="card-head position-relative">
+                                    <img src="../media/images/estimateasy-11.png" class="card-img-top position-relative p-3"
+                                        alt="Product Image">
+                                </div>
+                                <hr>
+                                <div class="card-body mt-2">
+                                    <h3 class="card-title text-white"><span class="highlighter">Add WebsiteSettings</span> - <br>
+                                       Add Logo, address, phone_number</h3>
+                                    <a href="{% url 'settings' %}" class="btn d-flex align-items-center">Add <img
+                                            src="{% static 'img/arrow-right.svg' %}" class="ms-1 w-16px" alt="Arrow Icon"> </a>
+                                </div>
+                            </div>
+                            <!--  -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>        
+    </main>
+
+    <script src="{% static 'js/jQuery.js' %}"></script>
+    <!-- Bootstrap-5.2 Js -->
+    <script src="{% static 'js/bootstrap-5.2.js' %}"></script>
+    <!-- Slick Slider Js -->
+    <script src="{% static 'js/slick.js' %}"></script>
+    <!-- Custom Js -->
+    <script src="{% static 'js/main.js' %}"></script>
+
+</body>
+</html>

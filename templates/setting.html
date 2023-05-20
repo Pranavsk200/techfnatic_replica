@@ -1,0 +1,181 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechFnatic - Contact Page</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'img/logo.png' %}">
+
+    <!-- Bootstrap-5.2 CSS -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap-5.2.css' %}">
+
+    <!-- Slick Slider CSS -->
+    <link rel="stylesheet" href="{% static 'css/slick.css' %}">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+
+<body>
+    <main id="main">
+        <!-- === Header (Navbar) -->
+        <header class="fixed-top">
+            <nav class="navbar navbar-expand-md p-0">
+                <div class="container">
+                    <a class="navbar-brand" href="index.html"><img src="{% static 'img/logo.png' %}" class="logo" alt="Logo Image"></a>
+                    <button class="navbar-toggler fs-24" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="offcanvas offcanvas-end mobile-nav" tabindex="-1" id="offcanvasNavbar"
+                        aria-labelledby="offcanvasNavbarLabel">
+                        <div class="offcanvas-header">
+                            <img src="{% static 'img/logo.png' %}" class="logo" alt="Logo Image">
+                            <button type="button" class="btn-close fs-24" data-bs-dismiss="offcanvas"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="offcanvas-body align-items-center">
+                            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="{% url 'index' %}">View Site</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                                </li>
+                                <li class="nav-item d-block d-md-none">
+                                    <a href="https://wa.me/+916361662946" target="_blank" class="nav-link"><img
+                                            src="{% static 'img/whatsapp.svg' %}" class="w-24px" alt="Whatsapp Icon"></a>
+                                </li>
+                            </ul>
+                            
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <!-- ==== Contact Form Section ===== -->
+        <section class="Contact-section pt-2rem pb-2rem mt-78px">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-10 col-xl-8">
+                        <h1 class="heading-1">Website Settings</span></h1>
+                        <p class="me-lg-4 fs-16 mt-2">Add Settings.</p>
+                        <!-- Form -->
+                        <form class="mt-3" method="POST" action="/adminProductDis" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div class="mb-3">
+                                <label for="fName" class="form-label">Address*</label>
+                                <input type="text" class="form-control" id="fName" placeholder="Yalahanka, Bangalore" name="address" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="lName" class="form-label">PhoneNO*</label>
+                                <input type="text" class="form-control" id="lName" placeholder="8618374512" name="phoneNO" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Logo*</label>
+                                <input type="file" class="form-control" id="email" name="logo" required>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-main w-100">Submit</button>
+                            <small class="d-flex justify-content-center align-items-center mt-2"><img src="{% static 'img/shield-lock-fill.svg' %}" class="w-16px me-1" alt="Shield-lock Icon"> We hate spam, and we respect your privacy.</small>
+                            {% for message in messages %}
+                                <small class="d-flex justify-content-center align-items-center mt-2" style="color:red"><img src="{% static 'img/shield-lock-fill.svg' %}" class="w-16px me-1" alt="Shield-lock Icon"> {{message}}</small>
+                            {% endfor %}
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr>
+
+        <!-- ==== Footer Section ===== -->
+        <section class="footer-section pt-2rem pb-2rem">
+            <div class="container">
+                <!-- Footer Header -->
+                <div class="row justify-content-between">
+                    <div class="col-6">
+                        <img src="{% static 'img/logo.png' %}" class="logo" alt="Logo Image">
+                    </div>
+                    <div class="col-6">
+                        <ul class="social-links d-flex justify-content-end mb-0 list-unstyled">
+                            <li><a target="_blank" href="https://www.facebook.com/Techfnatic"><img src="{% static 'img/facebook.svg' %}"
+                                        alt="Facebook Icon"></a></li>
+                            <li><a target="_blank" href="https://www.linkedin.com/company/techfnatic/"><img src="{% static 'img/linkedin.svg' %}"
+                                        alt="Linkedin Icon"></a></li>
+                            
+                        </ul>
+                    </div>
+                </div>
+                <!-- Footer Content -->
+                <div class="row mt-4">
+                    <!-- First Col -->
+                    <div class="col-md-6 col-lg-4">
+                        <ul class="footer-links mb-0 list-unstyled">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="index.html#our-products">Products</a></li>
+                            <li><a href="career-page.html">Career</a></li>
+                            <li><a href="contact-us.html">Contact Us</a></li>
+                            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                            <li><a href="terms-and-conditions.html">Terms & Conditions</a></li>
+                        </ul>
+                    </div>
+                    <!-- Second Col -->
+                    <div class="col-md-6 col-lg-4 mt-4 mt-lg-0">
+                        <ul class="footer-links footer-contact mb-0 list-unstyled">
+                            <li class="d-flex align-items-start">
+                                <img src="{% static 'img/envelope-fill.svg' %}" class="mt-1" alt="Message Icon">
+                                <div class="ms-2">
+                                    <h5>Email</h5>
+                                    <a href="mailto:solution@techfnatic.com">solution@techfnatic.com</a>
+                                </div>
+                            </li>
+                            
+                            <li class="d-flex align-items-start">
+                                <img src="{% static 'img/geo-alt-fill.svg' %}" class="mt-1" alt="Message Icon">
+                                <div class="ms-2">
+                                    <h5>Address</h5>
+                                    <a href="https://goo.gl/maps/2ZBTTgBj3jdfGwXm7" target="_blank">Bengaluru, Karnataka </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Third Col -->
+                    <div class="col-md-12 col-lg-4 mt-4 mt-lg-0">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.839134134713!2d77.59633381413528!3d12.982138818161104!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1714d2e763c3%3A0xaf89561c107d050!2sTechFNatic!5e0!3m2!1sen!2sin!4v1663663406435!5m2!1sen!2sin"
+                            width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr>
+
+        <!-- ==== Bottom Footer Section ===== -->
+        <section class="bottom-footer py-3">
+            <div class="container">
+                <div class="row text-center">
+                    <div class="col-12">
+                        <p class="fw-500 fs-16">Copyright © 2022 </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Bootstrap-5.2 Js -->
+    <script src="{% static 'js/bootstrap-5.2.js' %}"></script>
+
+
+</body>
+
+</html>

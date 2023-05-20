@@ -1,0 +1,85 @@
+/* ================ Home Page CSS =========== */
+
+/* ===== Products Section ==== */
+.product-slider .slick-track {
+    display: flex;
+}
+.product-slider .slick-slide {
+    padding: 0 12px;
+    height: inherit !important;
+}
+.product-slider .slick-slide > div, .product-slider .slick-slide > div .product-card {
+    height: 100%;
+}
+.product-card{
+    background: linear-gradient(270deg, #f5f5f5, #ffffff, #f5f5f5);
+    background: linear-gradient(270deg, #f5f5f587, #ffffff61, #f5f5f587);
+    border: 2px solid #520000;
+    border-radius: 8px;
+    box-shadow: 0 3.4px 2.7px -30px rgb(0 0 0 / 6%), 0 8.2px 8.9px -30px rgb(0 0 0 / 7%), 0 25px 40px -30px rgb(0 0 0 / 20%);
+    background-position: 100% 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex !important;
+}
+.product-card .card-head{
+    height: 222px;
+}
+.product-card .card-head img{
+    height: 100%;
+    object-fit: cover;
+}
+.product-card .card-head::before{
+    content: '';
+    background: url(../img/wave-bg.svg) #ffffff00;
+    background-position: 100% 0;
+    background-repeat: no-repeat;
+    background-size: 156px;
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+    position: absolute;
+}
+.product-card hr{
+    border-top: 2px solid #520000;
+    margin: 0 1rem;
+}
+.product-card .card-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.product-card .card-body .card-title{
+    font-size: 1.75rem;
+    color: var(--primary-color) !important;
+    font-weight: 700;
+    margin: 0;
+}
+.product-card .card-body .card-title .highlighter{
+    font-weight: 500;
+}
+.product-card .card-body .btn{
+    border: none;
+    padding: 0;
+    color: #000000;
+    font-weight: 500;
+    margin-top: 1rem;
+}
+.product-card .card-body .btn img{
+    width: 16px;
+    transition: 0.25s ease;
+}
+.product-card .card-body .btn:hover img{
+    margin-left: 0.5rem !important;
+}
+
+/* ==== Privacy policy and terms and condition page css ==== */
+.privacy-terms-sec p{
+    margin-bottom: 1rem;
+}
+@media screen and (max-width: 992px) {
+    .slick-prev, .slick-next {
+        bottom: -35px;
+    }
+    
+}
